@@ -1,4 +1,5 @@
 """Smoke test: package imports cleanly."""
+
 import bsrl_fit
 
 
