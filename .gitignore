@@ -1,0 +1,26 @@
+emcee_BSRL_project_brief.md
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.python-version
+
+# uv
+# (uv.lock IS committed — that's the reproducibility artifact)
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing / linting
+.pytest_cache/
+.ruff_cache/
+
+# MCMC outputs (large binary chains)
+*.h5
+!tests/**/*.h5
+
+# OS
+.DS_Store
+Thumbs.db

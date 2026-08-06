@@ -1,0 +1,31 @@
+[project]
+name = "bsrl-fit"
+version = "0.1.0"
+description = "Bayesian fitting of LHC-Style longitudinal bunch profiles with a Poisson photon-counting likelihood"
+readme = "README.md"
+authors = [
+    { name = "Laura", email = "llaura.domenech@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "arviz>=1.2.0",
+    "corner>=2.3.0",
+    "emcee>=3.1.6",
+    "h5py>=3.16.0",
+    "matplotlib>=3.11.1",
+    "numpy>=2.5.1",
+    "scipy>=1.18.0",
+    "tqdm>=4.70.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+    "jupyterlab>=4.6.2",
+    "pytest>=9.1.1",
+    "ruff>=0.16.1",
+]
