@@ -1,6 +1,6 @@
 import numpy as np
 
-from bsrl_fit import expected_counts
+from .simulate_data import expected_counts
 
 S_N = 3e5
 S_SIGMA = 2
