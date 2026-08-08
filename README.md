@@ -4,9 +4,11 @@ Bayesian reconstruction of a synchrotron longitudinal bunch profile from single-
 
 ![Simulated bunch profile](figures/data_overview.png)
 
+*The simulated dataset: photon counts per 0.05 ns bin, shown on a linear scale (left) where only the main bunch is visible, and on a log scale (right) where the satellite at 7.5 ns and the ghost at 30 ns emerge above the dark-count floor.*
+
 ---
 
-## The problem
+## Context
 
 A **longitudinal bunch profile** is the time distribution of particles within a single circulating bunch, measured by counting synchrotron-radiation photons in fine time bins. Beyond the main bunch, the same RF structure can trap two parasitic populations:
 
@@ -55,6 +57,8 @@ Production chain: 32 walkers × 5000 steps = 160 000 draws, stored via `emcee.ba
 
 ![Corner plot](figures/corner.png)
 
+*Corner plot of the posterior: diagonal panels are the marginal distribution of each parameter, off-diagonal panels are the pairwise joint distributions (contours at 1σ, 2σ, 3σ), with the injected truth in red> Near-circular contours mean the parameters are essentially uncorrelated.*
+
 | Parameter | Truth | Posterior mean ± sd | 94% HDI | Bias |
 |---|---|---|---|---|
 | `N_main` | 100 000 | 100 358 ± 317 | [99 771, 100 959] | +1.1σ |
@@ -80,6 +84,8 @@ All six truths lie inside the 94% HDI; the largest deviation is 1.6σ on `t0`, c
 A **posterior predictive check (PPC)** re-simulates datasets from parameters drawn from the posterior and asks whether the real data looks like a typical member of that set.
 
 ![Posterior predictive check](figures/ppc.png)
+
+*Posterior predictive check: the observed profile (orange) overlaid on the 68% band of 200 datasets re-simulated from the posterior (top), with the standardised residuals below. The data stays inside the band across all four decades of count rate, so the model is consistent with what was measured.*
 
 Top: 200 replicated datasets, 68% envelope, log scale (essential because the satellite and ghost live 2–4 decades below the main peak). Bottom: standardised residuals `(k − median) / √median`,  a real model error shows up as a run of same-sign residuals, not as isolated ±2 excursions.
 
